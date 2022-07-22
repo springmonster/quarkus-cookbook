@@ -1,5 +1,6 @@
 package com.example;
 
+import io.quarkus.vertx.http.runtime.filters.Filters;
 import io.quarkus.vertx.web.Route;
 import io.quarkus.vertx.web.RoutingExchange;
 import io.vertx.ext.web.Router;
@@ -34,5 +35,15 @@ public class ApplicationRoutes {
     @Route(path = "/ok_3", methods = Route.HttpMethod.GET)
     void greetings_3(RoutingExchange ex) {
         ex.ok("hello " + ex.getParam("name").orElse("world"));
+    }
+
+    //    curl http://localhost:8081/ok -v
+    // Check header
+    // Valid for servlet, JAX-RS, Reactive Routing
+    public void filters(@Observes Filters filters) {
+        filters.register(rc -> {
+            rc.response().putHeader("V-header", "Header added by filters");
+            rc.next();
+        }, 10);
     }
 }
