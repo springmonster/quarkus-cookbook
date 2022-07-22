@@ -52,9 +52,7 @@ public class ExampleResource {
     @GET
     @Path("/params")
     @Produces(MediaType.TEXT_PLAIN)
-    public String helloWithParams(@Context UriInfo uriInfo,
-                                  @QueryParam("order") Order order,
-                                  @NotBlank @HeaderParam("authorization") String authorization) {
+    public String helloWithParams(@Context UriInfo uriInfo, @QueryParam("order") Order order, @NotBlank @HeaderParam("authorization") String authorization) {
         return String.format("URI %s = Order %s - Authorization %s", uriInfo.getAbsolutePath(), order, authorization);
     }
 
