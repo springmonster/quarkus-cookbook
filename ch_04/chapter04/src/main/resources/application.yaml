@@ -1,0 +1,19 @@
+greeting:
+  message: Hello World
+
+# Set dev port 8081
+"%dev":
+  quarkus:
+    http:
+      port: 8081
+# This is profile
+"%staging":
+  quarkus:
+    http:
+      port: 8082
+quarkus:
+  http:
+    cors:
+      ~: true
+      methods: GET,PUT,POST
+    port: 8082
