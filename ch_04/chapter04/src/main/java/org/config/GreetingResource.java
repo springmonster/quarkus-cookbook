@@ -2,6 +2,8 @@ package org.config;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -13,6 +15,7 @@ import java.util.List;
 @Path("/hello")
 public class GreetingResource {
 
+    private Logger logger = LoggerFactory.getLogger(GreetingResource.class);
     @Inject
     Config config;
 
@@ -56,5 +59,13 @@ public class GreetingResource {
         config.getPropertyNames().forEach(System.out::println);
 
         return config.getValue("greeting.message", String.class);
+    }
+
+    @GET
+    @Path("/log")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloLog() {
+        logger.info("This is hello log");
+        return "hello log";
     }
 }
