@@ -1,12 +1,12 @@
 package org.acme.quickstart;
 
-import java.util.Arrays;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
+import java.util.Arrays;
+import java.util.List;
 
+//Object life cycle
 @ApplicationScoped
 public class RecommendationService {
     List<String> products;

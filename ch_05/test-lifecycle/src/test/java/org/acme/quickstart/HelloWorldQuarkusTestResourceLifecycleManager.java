@@ -1,12 +1,12 @@
 package org.acme.quickstart;
 
+import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
+
 import java.util.Collections;
 import java.util.Map;
 
-import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
-
-public class HelloWorldQuarkusTestResourceLifecycleManager 
-    implements QuarkusTestResourceLifecycleManager { // <1>
+public class HelloWorldQuarkusTestResourceLifecycleManager
+        implements QuarkusTestResourceLifecycleManager { // <1>
 
     @Override
     public Map<String, String> start() { // <2>
@@ -28,5 +28,5 @@ public class HelloWorldQuarkusTestResourceLifecycleManager
     public int order() { // <6>
         return 0;
     }
-        
+
 }

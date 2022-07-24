@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 public class GreetingResource {
     @Inject                     // <1>
     GreetingService service;    // <2> 
+
     // end::base[]
     // tag::basic_method[]
     @GET
@@ -18,6 +19,7 @@ public class GreetingResource {
     public String hello() {
         return service.getGreeting();
     }
+
     // end::basic_method[]
     // tag::locale_method[]
     @GET

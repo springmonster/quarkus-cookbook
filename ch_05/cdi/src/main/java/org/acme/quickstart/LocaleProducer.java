@@ -1,11 +1,10 @@
 // tag::base[]
 package org.acme.quickstart;
 
-import java.util.Locale;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
+import java.util.Locale;
 
 @ApplicationScoped
 public class LocaleProducer {
@@ -13,7 +12,8 @@ public class LocaleProducer {
     public Locale getDefaultLocale() {
         return Locale.getDefault();
     }
-// end::base[]
+
+    // end::base[]
     // tag::named[]
     @Produces
     @Named("en_US")
@@ -26,6 +26,7 @@ public class LocaleProducer {
     public Locale getEsESLocale() {
         return new Locale("es", "ES");
     }
+
     // end::named[]
     // tag::qualifer[]
     @Produces

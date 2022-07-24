@@ -1,11 +1,10 @@
 // tag::base[]
 package org.acme.quickstart;
 
-import java.util.Locale;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.Locale;
 
 @ApplicationScoped                  // <1>
 public class GreetingService {
@@ -14,7 +13,7 @@ public class GreetingService {
     }
 // end::base[]
 
-// tag::named[]
+    // tag::named[]
     @Inject
     @Named("en_US")
     Locale en_US;
@@ -32,6 +31,7 @@ public class GreetingService {
 
         return "Unknown locale";
     }
+
     // end::named[]
     // tag::qualifer[]
     @Inject
