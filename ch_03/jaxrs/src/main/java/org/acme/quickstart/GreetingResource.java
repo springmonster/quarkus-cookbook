@@ -1,6 +1,5 @@
 package org.acme.quickstart;
 
-
 import javax.validation.constraints.NotBlank;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -23,14 +22,13 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(
-                    @Context UriInfo uriInfo, // <1>
-                    @QueryParam("order") Order order, // <2>
-                    @NotBlank @HeaderParam("authorization") String authorization // <3>
-                    ) {
-
+            @Context UriInfo uriInfo, // <1>
+            @QueryParam("order") Order order, // <2>
+            @NotBlank @HeaderParam("authorization") String authorization // <3>
+    ) {
 
         return String.format("URI: %s - Order %s - Authorization: %s",
-                             uriInfo.getAbsolutePath(), order, authorization);
+                uriInfo.getAbsolutePath(), order, authorization);
     }
     // end::extract[]
 
