@@ -10,6 +10,8 @@ public class Developer {
     private String name;
 
     @NotBlank // <2>
+//    Use custom validation
+//    @JvmLanguage
     private String favoriteLanguage;
     // end::validation[]
     private int age;
